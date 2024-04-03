@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -428,8 +428,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oad-nZ-CZW" customClass="PlaylistModesView" customModule="Lesson12HW" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wol-2C-D1k" userLabel="SegmentedControl">
+                                        <rect key="frame" x="0.0" y="59" width="393" height="32"/>
+                                        <segments>
+                                            <segment title="All"/>
+                                            <segment title="Genre"/>
+                                            <segment title="Author"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9gU-zX-Vq8">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                        <rect key="frame" x="0.0" y="90" width="393" height="728"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MainPlaylistCell" textLabel="c2F-to-29k" detailTextLabel="Kon-bs-TGg" style="IBUITableViewCellStyleSubtitle" id="AkY-Kq-ag3">
@@ -462,11 +470,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="9gU-zX-Vq8" secondAttribute="bottom" id="8xf-57-PnH"/>
-                                    <constraint firstItem="9gU-zX-Vq8" firstAttribute="top" secondItem="Oad-nZ-CZW" secondAttribute="top" id="dee-30-Uyz"/>
+                                    <constraint firstAttribute="trailing" secondItem="wol-2C-D1k" secondAttribute="trailing" id="dW8-jo-P91"/>
                                     <constraint firstItem="9gU-zX-Vq8" firstAttribute="leading" secondItem="Oad-nZ-CZW" secondAttribute="leading" id="rz9-74-Z3I"/>
+                                    <constraint firstItem="9gU-zX-Vq8" firstAttribute="top" secondItem="wol-2C-D1k" secondAttribute="bottom" id="vAc-K0-9if"/>
+                                    <constraint firstItem="wol-2C-D1k" firstAttribute="leading" secondItem="Oad-nZ-CZW" secondAttribute="leading" id="xjm-lX-Ub6"/>
                                     <constraint firstAttribute="trailing" secondItem="9gU-zX-Vq8" secondAttribute="trailing" id="ygS-hC-xA3"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="segmentedControl" destination="wol-2C-D1k" id="raM-p0-Asi"/>
                                     <outlet property="tableView" destination="9gU-zX-Vq8" id="RSP-W5-JhY"/>
                                 </connections>
                             </view>
@@ -475,6 +486,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Oad-nZ-CZW" firstAttribute="leading" secondItem="quj-JR-YSt" secondAttribute="leading" id="M1D-yJ-FzX"/>
+                            <constraint firstItem="quj-JR-YSt" firstAttribute="top" secondItem="wol-2C-D1k" secondAttribute="top" id="SQ7-7y-KMu"/>
                             <constraint firstItem="Oad-nZ-CZW" firstAttribute="trailing" secondItem="quj-JR-YSt" secondAttribute="trailing" id="SnV-0C-6jW"/>
                             <constraint firstItem="quj-JR-YSt" firstAttribute="bottom" secondItem="Oad-nZ-CZW" secondAttribute="bottom" id="Vka-Fx-V7h"/>
                             <constraint firstItem="Oad-nZ-CZW" firstAttribute="top" secondItem="VDH-Mp-BUq" secondAttribute="top" id="Vs4-id-WPD"/>

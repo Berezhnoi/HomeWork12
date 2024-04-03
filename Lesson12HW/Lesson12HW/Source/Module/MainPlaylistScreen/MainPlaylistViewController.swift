@@ -27,9 +27,13 @@ class MainPlaylistViewController: UIViewController {
         
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        
+        // Register custom cell class with the table view
+        contentView.tableView.register(MainPlaylistTableViewCell.self, forCellReuseIdentifier: MainPlaylistTableViewCell.identifier)
     }
 }
 
+// MARK: - MainPlaylistModelDelegate
 extension MainPlaylistViewController: MainPlaylistModelDelegate {
     
     func dataDidLoad() {
@@ -37,10 +41,12 @@ extension MainPlaylistViewController: MainPlaylistModelDelegate {
     }
 }
 
+// MARK: - MainPlaylistViewDelegate
 extension MainPlaylistViewController: MainPlaylistViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension MainPlaylistViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,21 +54,24 @@ extension MainPlaylistViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainPlaylistCell")
-        else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainPlaylistTableViewCell.identifier, for: indexPath) as? MainPlaylistTableViewCell else {
             assertionFailure()
             return UITableViewCell()
-        }
-        
-        cell.textLabel?.text = model.items[indexPath.row].songTitle
-        
-        return cell
+         }
+         
+         let song = model.items[indexPath.row]
+         
+         // Configure the cell with song information
+         cell.titleLabel.text = song.songTitle
+         cell.authorLabel.text = "Author: \(song.author)"
+         cell.albumLabel.text = "Album: \(song.albumTitle)"
+         cell.genreLabel.text = "Genre: \(song.genre)"
+         
+         return cell
     }
 }
 
+// MARK: - UITableViewDelegate
 extension MainPlaylistViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
 }

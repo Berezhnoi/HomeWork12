@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47C5A5C82BBDC0C100C608C8 /* MainPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A5C72BBDC0C100C608C8 /* MainPlaylistTableViewCell.swift */; };
 		CE4715042BBAC38F00759142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715032BBAC38F00759142 /* AppDelegate.swift */; };
 		CE4715062BBAC38F00759142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715052BBAC38F00759142 /* SceneDelegate.swift */; };
 		CE47150B2BBAC38F00759142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4715092BBAC38F00759142 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47C5A5C72BBDC0C100C608C8 /* MainPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		CE4715002BBAC38F00759142 /* Lesson12HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson12HW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4715032BBAC38F00759142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4715052BBAC38F00759142 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		CE47153B2BBB080C00759142 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				47C5A5C72BBDC0C100C608C8 /* MainPlaylistTableViewCell.swift */,
 				CE47153C2BBB082200759142 /* Playlist.swift */,
 			);
 			path = Common;
@@ -385,6 +388,7 @@
 				CE47153A2BBB074C00759142 /* DataLoaderService.swift in Sources */,
 				CE4715042BBAC38F00759142 /* AppDelegate.swift in Sources */,
 				CE4715332BBAFBF100759142 /* TaskItem.swift in Sources */,
+				47C5A5C82BBDC0C100C608C8 /* MainPlaylistTableViewCell.swift in Sources */,
 				CE4715652BBC2D8000759142 /* PlaylistMoveDeleteModel.swift in Sources */,
 				CE47152A2BBADEF700759142 /* MainModel.swift in Sources */,
 				CE47152E2BBAE0EC00759142 /* UIView+Identifier.swift in Sources */,
